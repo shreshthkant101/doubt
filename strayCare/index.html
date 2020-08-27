@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png" href="logo.PNG">
+    <title>StrayCare | Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/8f62687ae1.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+</head>
+<style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Srisakdi:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        background: url('bg_h.jpg');
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    #nav {
+        width: 100%;
+        height: 60px;
+        background: white;
+        box-shadow: 0px 0px 20px grey;
+    }
+    
+    #logo {
+        font-family: 'Nunito', sans-serif;
+        color: black;
+        text-decoration: none;
+        font-size: 40px;
+        display: inline-block;
+        background: none;
+        height: 56px;
+        width: 235px;
+        padding-top: 3px;
+        padding-left: 10px;
+        -webkit-user-select: none;
+        cursor: pointer;
+    }
+    
+    .ll {
+        float: right;
+        display: inline-block;
+        font-size: 25px;
+        background: black;
+        height: 47px;
+        width: 200px;
+        padding-left: 45px;
+        padding-top: 13px;
+        color: white;
+        text-decoration: none;
+        font-family: 'Work Sans', sans-serif;
+    }
+    
+    .ll:hover {
+        background: none;
+        color: black;
+        transition: 0.5s;
+    }
+    
+    #idp {
+        float: right;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: none;
+        margin-top: 10.5px;
+        margin-right: 11px;
+    }
+    
+    #idp:hover {
+        cursor: pointer;
+    }
+    
+    #userstats {
+        display: none;
+        background: white;
+        box-shadow: 0px 3px 8px grey;
+        height: 250px;
+        width: 200px;
+        float: right;
+        margin-right: 19.1%;
+        transition: 1s;
+    }
+    
+    #name {
+        font-family: 'Raleway', sans-serif;
+        margin-top: 2px;
+        overflow-wrap: break-word;
+    }
+    
+    #uid {
+        font-family: 'Raleway', sans-serif;
+        overflow-wrap: break-word;
+        font-size: 15px;
+    }
+    
+    #idd {
+        font-family: 'Raleway', sans-serif;
+    }
+    
+    #don {
+        font-family: 'Raleway', sans-serif;
+        color: #15AABF;
+        -webkit-user-select: none;
+        cursor: default;
+        margin-left: 3px;
+    }
+    
+    #gb {
+        width: 10px;
+        height: 10px;
+        background: black;
+        display: inline-block;
+    }
+    
+    #fdo,
+    #don {
+        display: inline-block;
+    }
+    
+    #awa,
+    #zpls {
+        display: inline-block;
+    }
+    
+    #zpls {
+        font-family: 'Raleway', sans-serif;
+        color: gold;
+    }
+    
+    #awa {
+        color: gold;
+    }
+    
+    #ad {
+        width: 600px;
+        height: 800px;
+        background: white;
+        box-shadow: 0px 0px 20px grey;
+        display: none;
+    }
+    
+    #adt {
+        color: #15AABF;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 25px;
+        margin-left: 5px;
+    }
+    
+    #hel,
+    #adt {
+        display: inline-block;
+    }
+    
+    #hel {
+        color: #15AABF;
+        font-size: 28px;
+    }
+    
+    label {
+        font-family: 'Ubuntu', sans-serif;
+    }
+    
+    input {
+        font-family: 'Ubuntu', sans-serif;
+        text-align: center;
+        background: none;
+        border: 1px solid black;
+        height: 30px;
+        width: 250px;
+        border-radius: 4px;
+    }
+    
+    input:focus {
+        outline: none;
+        border-radius: 4px;
+    }
+    
+    #sin {
+        display: none;
+    }
+    
+    #nsin {
+        display: none;
+        width: 100%;
+        height: 100%;
+        background: none;
+    }
+    
+    #cros {
+        font-size: 50px;
+        margin-top: 10px;
+        color: rgb(253, 27, 27);
+        -webkit-user-select: none;
+    }
+    
+    #ono {
+        font-family: 'Quicksand', sans-serif;
+        opacity: 0.55;
+        margin-top: 2px;
+        -webkit-user-select: none;
+    }
+    
+    #mes {
+        opacity: 0.55;
+        font-family: 'Londrina Solid', cursive;
+        font-size: 20px;
+        -webkit-user-select: none;
+    }
+    
+    #ref {
+        font-size: 35px;
+        color: #15AABF;
+        border: 1px solid #15AABF;
+        border-radius: 50%;
+        padding: 10px;
+    }
+    
+    #ref:hover {
+        background: #15AABF;
+        color: white;
+        transition: 0.5s;
+        cursor: pointer;
+    }
+    
+    #pw {
+        margin-top: 200px;
+        opacity: 0.4;
+        font-family: 'EB Garamond', serif;
+        font-weight: bold;
+        font-size: 20px;
+        -webkit-user-select: none;
+        display: block;
+    }
+    
+    #upl {
+        width: 150px;
+        height: 40px;
+        border: 0.4px solid black;
+        background: none;
+        font-family: 'Raleway', sans-serif;
+        cursor: pointer;
+    }
+    
+    #upl:hover {
+        background: black;
+        color: white;
+        transition: 0.5s;
+    }
+    
+    #upl:focus {
+        border: 0.4px solid black;
+        outline: none;
+    }
+    
+    #Sub {
+        width: 150px;
+        height: 50px;
+        margin-top: 10px;
+        border: 0.5px solid black;
+        background: none;
+        font-family: 'Raleway', sans-serif;
+        border-radius: 80px;
+    }
+    
+    #Sub:hover {
+        background: black;
+        cursor: pointer;
+        color: white;
+        transition: 0.5s;
+    }
+    
+    #typs {
+        width: 100%;
+        height: 200px;
+        background: grey;
+    }
+    
+    #dg {
+        width: 200px;
+        height: 200px;
+        background: url("select/dog.jpg");
+        position: absolute;
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center;
+        cursor: pointer;
+    }
+    
+    #dg:hover {
+        opacity: 0.7;
+        transition: 0.5s;
+    }
+    
+    #ct {
+        width: 200px;
+        height: 200px;
+        background: url("select/cat.jpg");
+        position: absolute;
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: left;
+        cursor: pointer;
+        margin-left: 200px;
+    }
+    
+    #ct:hover {
+        opacity: 0.7;
+        transition: 0.5s;
+    }
+    
+    #ot {
+        width: 200px;
+        height: 200px;
+        background: url("select/cat.jpg");
+        position: absolute;
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: left;
+        cursor: pointer;
+        margin-left: 400px;
+        background: linear-gradient(to bottom right, #97BEB6, #37B9E9);
+    }
+    
+    #ot:hover {
+        opacity: 0.85;
+        transition: 0.5s;
+    }
+    
+    #oth {
+        color: white;
+        margin-top: 85px;
+        font-size: 30px;
+        font-family: 'Abel', sans-serif;
+    }
+    
+    #closss {
+        position: absolute;
+        margin-left: 260px;
+        font-size: 30px;
+        margin-top: 10px;
+        color: grey;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    
+    #closss:hover {
+        color: red;
+        transition: 0.25s;
+    }
+    
+     ::-webkit-scrollbar {
+        width: 10px;
+    }
+    /* Track */
+    
+     ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    /* Handle */
+    
+     ::-webkit-scrollbar-thumb {
+        background: #888;
+        cursor: grabbing;
+    }
+    /* Handle on hover */
+    
+     ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+    
+    #t1 {
+        position: absolute;
+        margin-top: 70px;
+        font-size: 70px;
+        margin-left: -35px;
+        color: rgb(113, 252, 0);
+        box-shadow: 0px 0px 10px white;
+        border-radius: 50%;
+        background: white;
+        display: none;
+    }
+    
+    #t2 {
+        position: absolute;
+        margin-top: 70px;
+        font-size: 70px;
+        margin-left: -35px;
+        color: rgb(113, 252, 0);
+        box-shadow: 0px 0px 10px white;
+        border-radius: 50%;
+        background: white;
+        display: none;
+    }
+    
+    #t3 {
+        position: absolute;
+        margin-top: 70px;
+        font-size: 70px;
+        margin-left: -35px;
+        color: rgb(113, 252, 0);
+        box-shadow: 0px 0px 10px white;
+        border-radius: 50%;
+        background: white;
+        display: none;
+    }
+    
+    #Sub:active {
+        background: white;
+        transition: 0s;
+        color: black;
+    }
+    
+    #Sub:focus {
+        outline: none;
+    }
+    
+    #wrn {
+        font-family: 'Oswald', sans-serif;
+        color: red;
+        opacity: 0.7;
+        -webkit-user-select: none;
+    }
+    
+    #gett {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background: whitesmoke;
+        position: static;
+        margin-top: 300px;
+    }
+    
+    #intr {
+        width: 100%;
+        height: 100px;
+        background: linear-gradient(to bottom right, #97BEB6, #37B9E9);
+    }
+    
+    #sycrn {
+        margin-top: 11px;
+        color: white;
+        -webkit-user-select: none;
+        font-family: 'Quicksand', sans-serif;
+    }
+    
+    #whywe {
+        color: black;
+        font-family: 'Cabin', sans-serif;
+    }
+    
+    #contine {
+        width: 100%;
+        background: whitesmoke;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    #contine h1 {
+        font-family: 'Abel', sans-serif;
+    }
+    
+    #contine h3 {
+        font-family: 'Abel', sans-serif;
+    }
+    
+    #contine div {
+        display: inline-block;
+    }
+    
+    #pwas:hover {
+        color: #947867;
+        transition: 0.5s;
+    }
+    
+    #bone {
+        font-size: 22px;
+    }
+    
+    #bone:hover {
+        color: #15AABF;
+        transition: 0.5s;
+    }
+</style>
+
+<body onload="getdat()">
+    <div id="nav">
+        <a href="index.html" id="logo">STRAYCARE</a>
+        <i class="fas fa-paw" style="font-size: 36.5px;" id="pwas"></i>
+        <b><a href="#" class="ll" onclick="document.getElementById('ad').style.display = 'block';">Found a stray?</a></b>
+        <img src="user_icon.png" alt="user" id="idp" onmouseover="document.getElementById('userstats').style.display='block'" onmouseout="document.getElementById('userstats').style.display='none'">
+
+    </div>
+    <div id="userstats" onmouseover="document.getElementById('userstats').style.display='block'" onmouseout="document.getElementById('userstats').style.display='none'">
+        <center>
+            <br>
+            <i class="fas fa-award" id="awa"></i>
+            <b><p id="zpls">Zoophilist</p></b><br><br>
+            <p id="name">-</p><br>
+            <p id="idd">Email: </p><br>
+            <p id="uid">-</p>
+
+            <br>
+            <br>
+            <br>
+
+            <b><i class="fas fa-check-circle" style="color: #15AABF;"></i><p id="don"> Signed In</p></b>
+
+
+        </center>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <center>
+        <div id="ad">
+            <i class="fas fa-times-circle" id="closss" onclick="document.getElementById('ad').style.display='none'"></i>
+            <div id="sin">
+                <br><br/>
+                <i class="fas fa-hand-holding-medical" id="hel"></i>
+                <h1 id="adt">Help a stray animal.</h1><br><br><br/>
+                <div id="typs">
+                    <div id="dg" onclick="dog()">
+                        <i class="far fa-check-circle" id="t1"></i>
+                    </div>
+                    <div id="ct" onclick="cat()">
+                        <i class="far fa-check-circle" id="t2"></i>
+                    </div>
+                    <div id="ot" onclick="othe()">
+                        <i class="far fa-check-circle" id="t3"></i>
+                        <h1 id="oth">Other</h1>
+                    </div>
+                </div>
+                <br><br>
+                <label for="prob">Injury:</label>
+                <input type="text" id="prob" placeholder="if none, put a  -  ">
+                <br><br><br>
+                <label for="imp">Please upload an image of the stray:  </label><button id="upl" onclick="clked()">Upload image</button>
+                <input type="file" style="display: none" id="imp"><br>
+
+                <br><br><br>
+                <label for="adr">Please provide a location: </label><input type="text" id="adr" placeholder="State . City . area "><br><br>
+                <br><label for="pn">Please provide your phone number: </label><input type="num" id="pn" placeholder=""><br><br>
+                <button id="Sub" onclick="up()">Submit</button><br><br>
+                <p id="wrn">Note: all the details must be authentic, otherwise serious action will be taken against the user.</p><br>
+                <i class="fas fa-bone" id="bone"></i><br>
+            </div>
+            <br>
+            <p id="pw">Please wait. loading...</p>
+            <div id="nsin"><br><br><br><br><br><br><br>
+                <i class="fas fa-times-circle" id="cros"></i>
+                <br><br>
+                <h1 id="ono">Sorry!</h1>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br><br>
+                <p id="mes">You are not signed in! Please refresh the page to sign in.</p>
+                <br>
+                <br>
+                <br>
+                <br>
+
+
+                <i class="fas fa-redo-alt" id="ref" onclick="window.location.reload();"></i>
+            </div>
+        </div>
+    </center>
+    <div id="gett">
+        <div id="intr"><br>
+            <h1 id="sycrn">
+                <center>Strays you can help now:</center>
+            </h1>
+        </div>
+        <div id="contine">
+
+        </div>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-database.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBgIAv-v6FeYCql2sF5O1MJbsNMwcXSXpQ",
+            authDomain: "auth-b79b3.firebaseapp.com",
+            databaseURL: "https://auth-b79b3.firebaseio.com",
+            projectId: "auth-b79b3",
+            storageBucket: "auth-b79b3.appspot.com",
+            messagingSenderId: "250502312377",
+            appId: "1:250502312377:web:ecc20edca5e7b00a8b8668",
+            measurementId: "G-QW3DWVCCLM"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
+    <script src="get.js"></script>
+    <script src="package.js"></script>
+    <script src="signin.js"></script>
+    <script src="upload.js"></script>
+    <script src="donornot.js"></script>
+
+    <script type="text/javascript">
+        new Package("ds", "e", "ssd", "https://firebasestorage.googleapis.com/v0/b/auth-b79b3.appspot.com/o/android%20certificate.PNG?alt=media&token=5ee05419-0076-4aa7-b7f6-9d66d815d457", "ssg", "gsdd", "shreshthkant101@gmail.com");
+
+        function clked() {
+            document.getElementById("imp").click();
+        }
+
+        function dog() {
+            document.getElementById('t1').style.display = "unset";
+            document.getElementById('t2').style.display = "none";
+            document.getElementById('t3').style.display = "none";
+            type = "dog";
+
+        }
+
+        function cat() {
+            document.getElementById('t2').style.display = "unset";
+            document.getElementById('t1').style.display = "none";
+            document.getElementById('t3').style.display = "none";
+            type = "cat";
+        }
+
+        function othe() {
+            document.getElementById('t3').style.display = "unset";
+            document.getElementById('t2').style.display = "none";
+            document.getElementById('t1').style.display = "none";
+            type = "other";
+        }
+    </script>
+
+</body>
+
+
+</html>
